@@ -10,8 +10,13 @@ class Welcome extends React.Component {
         date: new Date() // 更新 date
       })
     })
+    console.log('我已经在 constructor 里将 props 和 state 初始化好了')
+  }
+  componentWillMount() {
+    console.log('运行到这里的话，说明马上就要运行 render 了')
   }
   render() {
+    console.log('嗯，这里是 render')
     return ( <
       div >
       <
@@ -23,6 +28,9 @@ class Welcome extends React.Component {
       } < /h2> < /
       div >
     );
+  }
+  componentDidMount() {
+    console.log('已经挂载到页面里了')
   }
 }
 
