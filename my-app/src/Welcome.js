@@ -5,6 +5,11 @@ class Welcome extends React.Component {
     this.state = {
       date: new Date()
     }
+    setInterval(() => { // 搜索「JS 箭头函数 MDN」
+      this.setState({
+        date: new Date() // 更新 date
+      })
+    })
   }
   render() {
     return ( <
