@@ -19,7 +19,6 @@ export function signUp(username, password, successFn, errorFn){
  user.setPassword(password)
  // 设置邮箱
  user.signUp().then(function (loginedUser) {
-   console.log(loginedUser)
    let user = getUserFromAVUser(loginedUser)
    successFn.call(null, user)
  }, function (error) {
@@ -27,6 +26,16 @@ export function signUp(username, password, successFn, errorFn){
  })
   return undefined
 }
+
+export function getCurrentUser(){
+  let user = AV.User.current()
+  if(user){
+    return getUserFromAVUser(user)
+  }else{
+    return null
+  }
+}
+
 function getUserFromAVUser(AVUser){
  return {
    id: AVUser.id,
