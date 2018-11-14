@@ -5,7 +5,7 @@ import TodoItem from './TodoItem'
 import 'normalize.css'
 import './reset.css'
 import UserDialog from './UserDialog'
-import {getCurrentUser, signOut} from './leanCloud'
+import {getCurrentUser, signOut, TodoModel} from './leanCloud'
 
 class App extends Component {
   constructor(props){
@@ -14,6 +14,14 @@ class App extends Component {
       user: getCurrentUser() || {},
       newTodo: '',
       todoList:  []
+    }
+    let user = getCurrentUser()
+    if (user) {
+      TodoModel.getByUser(user, (todos) => {
+        let stateCopy = JSON.parse(JSON.stringify(this.state))
+        stateCopy.todoList = todos
+        this.setState(stateCopy)
+      })
     }
   }
   render() {
@@ -66,15 +74,20 @@ class App extends Component {
   componentDidUpdate(){
   }
   addTodo(event){
-    this.state.todoList.push({
-      id: idMaker(),
+    let newTodo = {
       title: event.target.value,
       status: null,
       deleted: false
-    })
-    this.setState({
-      newTodo: '',
-      todoList: this.state.todoList
+    }
+    TodoModel.create(newTodo, (id) => {
+      newTodo.id = id
+      this.state.todoList.push(newTodo)
+      this.setState({
+        newTodo: '',
+        todoList: this.state.todoList
+      })
+    }, (error) => {
+      console.log(error)
     })
   }
   toggle(e, todo){
@@ -94,9 +107,3 @@ class App extends Component {
 }
 
 export default App;
-
-let id = 0
- function idMaker(){
-  id += 1
-  return id
-}
