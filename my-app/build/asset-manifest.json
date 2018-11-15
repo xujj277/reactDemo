@@ -1,0 +1,15 @@
+{
+  "main.css": "/reactDemo/my-app/build/static/css/main.e825d721.chunk.css",
+  "main.js": "/reactDemo/my-app/build/static/js/main.8f12a6ee.chunk.js",
+  "main.js.map": "/reactDemo/my-app/build/static/js/main.8f12a6ee.chunk.js.map",
+  "static/css/1.db8368b1.chunk.css": "/reactDemo/my-app/build/static/css/1.db8368b1.chunk.css",
+  "static/js/1.69a7d800.chunk.js": "/reactDemo/my-app/build/static/js/1.69a7d800.chunk.js",
+  "static/js/1.69a7d800.chunk.js.map": "/reactDemo/my-app/build/static/js/1.69a7d800.chunk.js.map",
+  "runtime~main.js": "/reactDemo/my-app/build/static/js/runtime~main.0b042bed.js",
+  "runtime~main.js.map": "/reactDemo/my-app/build/static/js/runtime~main.0b042bed.js.map",
+  "static/css/main.e825d721.chunk.css.map": "/reactDemo/my-app/build/static/css/main.e825d721.chunk.css.map",
+  "static/css/1.db8368b1.chunk.css.map": "/reactDemo/my-app/build/static/css/1.db8368b1.chunk.css.map",
+  "index.html": "/reactDemo/my-app/build/index.html",
+  "precache-manifest.c8671922046c11d9bb0485bdf8214c00.js": "/reactDemo/my-app/build/precache-manifest.c8671922046c11d9bb0485bdf8214c00.js",
+  "service-worker.js": "/reactDemo/my-app/build/service-worker.js"
+}
